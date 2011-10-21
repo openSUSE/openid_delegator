@@ -1,0 +1,6 @@
+%li{:id => "identity_#{identity.id}", :class => :identity}
+  %strong= identity.name
+  pointing to:
+  %strong= identity.openid_url
+
+  = link_to 'Remove', identity, :method => :delete, :remote => true

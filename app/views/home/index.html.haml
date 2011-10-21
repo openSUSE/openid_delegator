@@ -1,0 +1,15 @@
+%h1
+  Welcome
+  = current_user.name
+
+%h2 Identities
+
+- if current_user.enabled
+  = render :partial => "identities", :layout => false,
+    :locals => {:identities => @identities}
+- else
+  %p Your account is not enabled. Please contact one of the administrators:
+  %ul
+    - User.find_all_by_admin(true).each do |a|
+      %li a.name
+

@@ -1,0 +1,17 @@
+%ul#identities
+  = render @identities
+
+%h2 Add another identity
+
+= form_for @identity, :remote => true do |f|
+  #errors
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :openid_url, 'Real openid:'
+    %br
+    = f.text_field :openid_url
+  %p
+    = f.submit

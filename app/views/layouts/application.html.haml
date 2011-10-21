@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+%html
+  %head
+    %title Delegator
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    = yield :head
+  %body
+    %div#user_nav
+      - if current_user
+        Logged in as 
+        %strong= current_user.name
+        |
+        = link_to "Signout", signout_path
+      - else
+        = link_to "Sign in with Google", "/auth/google"
+    - flash.each do |type,content|
+      = content_tag(:div, content, :id => "flash_"+type.to_s)
+      %br
+  
+    #content
+      = yield

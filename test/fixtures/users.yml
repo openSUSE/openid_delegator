@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  admin: false
+  enabled: false
+  provider: MyString
+  uid: MyString
+
+two:
+  name: MyString
+  admin: false
+  enabled: false
+  provider: MyString
+  uid: MyString
